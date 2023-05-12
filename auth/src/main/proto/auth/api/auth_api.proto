@@ -12,7 +12,8 @@ message User {
   string  firstName = 2;
   string  lastName = 3;
   string  email = 4;
-  bool    enabled = 5;
+  string password = 5;
+  bool    enabled = 6;
 }
 
 message LoginRequest {
