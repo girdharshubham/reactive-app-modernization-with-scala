@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package auth.domain;
+
+message UserState {
+  string  userName = 1;
+  string  firstName = 2;
+  string  lastName = 3;
+  string  email = 4;
+  bool    enabled = 5;
+}
