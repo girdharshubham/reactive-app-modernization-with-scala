@@ -1,6 +1,7 @@
-package auth
+package extremeprogramming.manager
 
 import kalix.scalasdk.Kalix
+import extremeprogramming.manager.KalixFactory
 import org.slf4j.LoggerFactory
 
 // This class was initially generated based on the .proto definition by Kalix tooling.
@@ -10,7 +11,7 @@ import org.slf4j.LoggerFactory
 
 object Main {
 
-  private val log = LoggerFactory.getLogger("auth.Main")
+  private val log = LoggerFactory.getLogger("manager.Main")
 
   def createKalix(): Kalix = {
     // The KalixFactory automatically registers any generated Actions, Views or Entities,
@@ -23,6 +24,6 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     log.info("starting the Kalix service")
-    createKalix().start()
+    createKalix().start(): Unit
   }
 }

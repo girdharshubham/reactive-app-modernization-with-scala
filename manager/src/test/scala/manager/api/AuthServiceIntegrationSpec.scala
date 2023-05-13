@@ -1,8 +1,7 @@
-package auth.api
+package manager.api
 
-import akka.actor.ActorSystem
-import auth.Main
-import com.google.protobuf.empty.Empty
+
+import extremeprogramming.manager.Main
 import kalix.scalasdk.testkit.KalixTestKit
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.concurrent.ScalaFutures
@@ -27,8 +26,6 @@ class AuthServiceIntegrationSpec
     PatienceConfig(Span(5, Seconds), Span(500, Millis))
 
   private val testKit = KalixTestKit(Main.createKalix()).start()
-
-  private val client = testKit.getGrpcClient(classOf[AuthService])
 
   "AuthService" must {
 

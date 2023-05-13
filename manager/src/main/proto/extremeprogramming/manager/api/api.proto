@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package auth.api;
+package extremeprogramming.manager.api;
 
 import "google/protobuf/empty.proto";
 import "kalix/annotations.proto";
@@ -26,9 +26,9 @@ message LogoutRequest {}
 service AuthService {
   option (kalix.codegen) = {
     value_entity: {
-      name: "auth.UserEntity"
+      name: "extremeprogramming.manager.UserEntity"
       entity_type: "users"
-      state: "auth.domain.UserState"
+      state: "extremeprogramming.manager.domain.UserState"
     }
   };
   rpc Register(User) returns (google.protobuf.Empty);

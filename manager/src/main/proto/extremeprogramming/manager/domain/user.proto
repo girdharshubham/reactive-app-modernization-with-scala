@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package auth.domain;
+package extremeprogramming.manager.domain;
 
 message UserState {
   string  userName = 1;

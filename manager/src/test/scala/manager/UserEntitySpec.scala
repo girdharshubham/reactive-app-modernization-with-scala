@@ -1,20 +1,18 @@
-package auth
+package manager
 
-import auth.domain.UserState
-import com.google.protobuf.empty.Empty
-import kalix.scalasdk.testkit.ValueEntityResult
-import kalix.scalasdk.valueentity.ValueEntity
+import extremeprogramming.manager.UserEntity._
+import extremeprogramming.manager.domain.UserState
+import extremeprogramming.manager.{UserEntity, UserEntityTestKit}
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
-import UserEntity._
 
 class UserEntitySpec extends AnyWordSpec with Matchers {
 
-  val girdharshubham = auth.api.User(
+  val girdharshubham = extremeprogramming.manager.api.User(
     userName = "girdharshubham",
     firstName = "Shubham",
     lastName = "Girdhar",
-    email = "girdharshubham@hotmail.com"
+    email = "girdharshubham@hotmail.com",
   )
 
   "UserEntity" must {

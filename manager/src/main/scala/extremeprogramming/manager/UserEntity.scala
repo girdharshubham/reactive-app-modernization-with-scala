@@ -1,7 +1,6 @@
-package auth
+package extremeprogramming.manager
 
-import auth.api.User
-import auth.domain.UserState
+import extremeprogramming.manager.domain.UserState
 import com.google.protobuf.empty.Empty
 import kalix.scalasdk.valueentity.ValueEntity
 import kalix.scalasdk.valueentity.ValueEntityContext
@@ -17,31 +16,31 @@ class UserEntity(context: ValueEntityContext) extends AbstractUserEntity {
   override def emptyState: UserState = UserState()
 
   override def register(
-      currentState: UserState,
-      user: auth.api.User
+    currentState: UserState,
+    user: extremeprogramming.manager.api.User,
   ): ValueEntity.Effect[Empty] =
     effects.updateState(user.toDomain).thenReply(Empty())
 
   override def login(
-      currentState: UserState,
-      loginRequest: auth.api.LoginRequest
+    currentState: UserState,
+    loginRequest: extremeprogramming.manager.api.LoginRequest,
   ): ValueEntity.Effect[Empty] = effects.reply(Empty())
 
   override def logout(
-      currentState: UserState,
-      logoutRequest: auth.api.LogoutRequest
+    currentState: UserState,
+    logoutRequest: extremeprogramming.manager.api.LogoutRequest,
   ): ValueEntity.Effect[Empty] = effects.reply(Empty())
 
 }
 
 object UserEntity {
-  implicit class UserStateExtensions(val user: auth.api.User) extends AnyVal {
+  implicit class UserStateExtensions(val user: extremeprogramming.manager.api.User) extends AnyVal {
     def toDomain: UserState = UserState(
       userName = user.userName,
       firstName = user.firstName,
       lastName = user.lastName,
       email = user.email,
-      enabled = user.enabled
+      enabled = user.enabled,
     )
   }
 }
