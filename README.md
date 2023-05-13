@@ -15,7 +15,7 @@ with.
 
 ```mermaid
 graph LR
-    A[Ingetor] --> B[Processor] --> C[Carrier]
+    A[Ingestor] --> B[Processor] --> C[Carrier]
     D[Manager] -->|Manage Ingestion Rules| A
     D -->|Manage Processing Rules| B
     D -->|Manage Delivery Rules| C
